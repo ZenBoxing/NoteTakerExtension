@@ -1,0 +1,22 @@
+.App {
+    text-align: center;
+    background-color: white;
+    width: 300px;
+    height: 200px;
+  }
+  
+  .MainButton{
+    background-color: #7fffd4;
+    color: white;
+    border: #7fffd4;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 100px;
+  }
+  
+  .Test{
+    font-size: 14px;
+    margin-top: 50px;
+    color:black;
+  }
+  
