@@ -44,8 +44,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                     {
                         insertText: {
                         text: "test this out",
-                        location: {
-                            index: 1,
+                        endOfSegmentLocation: {
+                            
                         },
                         },
                     },
@@ -69,8 +69,39 @@ chrome.runtime.onInstalled.addListener(() => {
 
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
-    console.log("hello");
+
+
     console.log(tab.title);
     console.log(info.pageUrl);
     console.log(info.selectionText);
+
+    chrome.identity.getAuthToken({ interactive: true }, (token) => {
+        let fetch_url =  `https://docs.googleapis.com/v1/documents/${documentID}:batchUpdate?key=${API_KEY}`;
+
+        let fetch_options = {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                requests: [
+                {
+                    insertText: {
+                    text: "/n" + info.selectionText + "/n",
+                    location: {
+                        index: 1,
+                    },
+                    },
+                },
+                ],
+            }),
+            };
+
+        fetch(fetch_url, fetch_options).then(res => res.json()).then(res => console.log(res));
+
+    });
+
+
+
 });
