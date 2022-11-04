@@ -17,7 +17,34 @@ chrome.identity.onSignInChanged.addListener((account_id, signedIn) => {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     
     if(request.message === 'load_document'){
-        documentId = request.documentId;
+
+        
+        const user_submitted_documentId = request.documentId;
+        
+        let fetch_status = null;
+
+
+        // chrome.identity.getAuthToken({ interactive: true }, function(token){
+
+        //     let fetch_url =  `https://docs.googleapis.com/v1/documents/${user_submitted_documentId}`;
+            
+        //     let fetch_options = {
+        //         method: "GET",
+        //         headers: {
+        //             Authorization: `Bearer ${token}`,
+        //             "Content-Type" : "application/json",
+        //         },
+        //     };
+
+        //     //fetch(fetch_url,fetch_options);
+
+
+        sendResponse({message : "end of function"})
+        
+
+        // });
+
+        
     }    
 });
 
