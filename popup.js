@@ -7,9 +7,9 @@ document.getElementById("MainButton").addEventListener("click", onButtonClick);
 
 function onButtonClick(){
      chrome.runtime.sendMessage({ 
-      message: 'load_document',
+      message: 'store_currentDocumentId',
       documentId: document.getElementById("documentId").value
-    }, function(response){ alert(response.message);});
+    }, (response) => { alert(response.message);});
   };
 
 // chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {

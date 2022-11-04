@@ -1,50 +1,31 @@
 import {config} from './config.js';
 
 const API_KEY = config.API_KEY;
-let documentId = "1vBLt4axCgXZ_aYqTfvYXTj-MroWI79fPWrR3uG1GARs";
-let user_signed_in = false;// probably don't need this property
+//const DISCOVERY_DOC = 'https://docs.googleapis.com/$discovery/rest?version=v1';
 
-//possibly don't need this listener
-chrome.identity.onSignInChanged.addListener((account_id, signedIn) => {
-    if(signedIn){
-        user_signed_in = true;
-    } else {
-        user_signed_in = false;
-    }
-});
+let documentId = "1vBLt4axCgXZ_aYqTfvYXTj-MroWI79fPWrR3uG1GARs";
+
+// function onGAPILoad() {
+//     gapi.client.init({
+//       apiKey: API_KEY,
+//       discoveryDocs: DISCOVERY_DOC,
+//     }).then(function () {
+//       console.log('gapi initialized')
+//     }, function(error) {
+//       console.log('error', error)
+//     });
+//   }
+
 
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     
-    if(request.message === 'load_document'){
-
+    if(request.message === 'store_currentDocumentId'){
+        let currentDocumentId = request.documentId;
         
-        const user_submitted_documentId = request.documentId;
+        chrome.storage.sync.set({'currentDocumentId' : currentDocumentId},() => sendResponse({message : "DocumendId Added"}));
         
-        let fetch_status = null;
-
-
-        // chrome.identity.getAuthToken({ interactive: true }, function(token){
-
-        //     let fetch_url =  `https://docs.googleapis.com/v1/documents/${user_submitted_documentId}`;
-            
-        //     let fetch_options = {
-        //         method: "GET",
-        //         headers: {
-        //             Authorization: `Bearer ${token}`,
-        //             "Content-Type" : "application/json",
-        //         },
-        //     };
-
-        //     //fetch(fetch_url,fetch_options);
-
-
-        sendResponse({message : "end of function"})
-        
-
-        // });
-
-        
+        return true;
     }    
 });
 
@@ -88,9 +69,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
             };
 
         fetch(fetch_url, fetch_options).then(res => res.json()).then(res => console.log(res));
-
     });
-
 
 
 });
