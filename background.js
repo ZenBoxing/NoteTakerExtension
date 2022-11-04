@@ -1,30 +1,38 @@
 import {config} from './config.js';
 
 const API_KEY = config.API_KEY;
-//const DISCOVERY_DOC = 'https://docs.googleapis.com/$discovery/rest?version=v1';
-
-let documentId = "1vBLt4axCgXZ_aYqTfvYXTj-MroWI79fPWrR3uG1GARs";
-
-// function onGAPILoad() {
-//     gapi.client.init({
-//       apiKey: API_KEY,
-//       discoveryDocs: DISCOVERY_DOC,
-//     }).then(function () {
-//       console.log('gapi initialized')
-//     }, function(error) {
-//       console.log('error', error)
-//     });
-//   }
-
-
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     
     if(request.message === 'store_currentDocumentId'){
+        
         let currentDocumentId = request.documentId;
         
-        chrome.storage.sync.set({'currentDocumentId' : currentDocumentId},() => sendResponse({message : "DocumendId Added"}));
-        
+        let fetch_status = null;
+
+        chrome.identity.getAuthToken({ interactive: true }, async function(token){
+
+            let fetch_url =  `https://docs.googleapis.com/v1/documents/${currentDocumentId}`;
+            
+            let fetch_options = {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type" : "application/json",
+                },
+            };
+
+            let fetch_response = await fetch(fetch_url,fetch_options);
+
+            if(fetch_response.status === 200){
+                chrome.storage.sync.set({'currentDocumentId' : currentDocumentId});
+                sendResponse({message : "Document Loaded"});
+            } else{
+                sendResponse({message :"Invalid DocumentId"});
+            }
+            
+        });
+
         return true;
     }    
 });
