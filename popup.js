@@ -12,8 +12,4 @@ function onButtonClick(){
     }, (response) => { alert(response.message);});
   };
 
-// chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-        
-// });
-
  
