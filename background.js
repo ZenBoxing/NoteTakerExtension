@@ -6,8 +6,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     
     if(request.message === 'store_currentDocumentId'){
 
-        let currentDocumentId = request.documentId
-        //console.log(currentDocumentId);
+        let currentDocumentId = request.documentId;
 
         chrome.identity.getAuthToken({ interactive: true }, async function(token){
 
@@ -25,7 +24,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
             if(fetch_response.status === 200){
                 chrome.storage.local.set({'currentDocumentId' : currentDocumentId});
-                
                 sendResponse({message : "Document Loaded"});
             } else{
                 sendResponse({message :"Invalid DocumentId"});
@@ -45,19 +43,14 @@ chrome.runtime.onInstalled.addListener(() => {
     });
 });
 
- 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
 
-    console.log(tab.title);
-    console.log(info.pageUrl);
-    console.log(info.selectionText);
-
     let documentId = null;
+
     chrome.storage.local.get(['currentDocumentId'], data => {
         documentId = data.currentDocumentId;
         console.log(documentId);
     });
-
 
     chrome.identity.getAuthToken({ interactive: true }, (token) => {
         let fetch_url =  `https://docs.googleapis.com/v1/documents/${documentId}:batchUpdate?key=${API_KEY}`;
