@@ -72,7 +72,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
                 requests: [
                 {
                     insertText: {
-                    text: "/n" + info.selectionText + "/n",
+                    text: "\n" + info.selectionText + "\n",
                     endOfSegmentLocation: {
                         
                     },
