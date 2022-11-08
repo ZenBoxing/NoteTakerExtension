@@ -6,9 +6,11 @@
 </head>
 <body>
     <div class="App">
-        <form>
-          <label for="documentId">Current Document</label>
-          <input type="text" id="documentId" name="documentId"><br>
+        <p id="currentDocumentLabel">Current Document: </p>
+        <p id="currentDocumentTitle"></p>
+        <form id="inputForm">
+          <label for="documentId" id="documentIdLabel">Add Document ID: </label>
+          <input type="text" id="documentId" name="documentId" autofocus="autofocus"><br>
           <input type="button" value="Load Document" id="MainButton">
         </form>
     <script type="text/javascript" src="popup.js"></script>    

@@ -20,14 +20,19 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                 },
             };
 
-            let fetch_response = await fetch(fetch_url,fetch_options);
+            //let fetch_response = await fetch(fetch_url,fetch_options);
 
-            if(fetch_response.status === 200){
-                chrome.storage.local.set({'currentDocumentId' : currentDocumentId});
-                sendResponse({message : "Document Loaded"});
-            } else{
-                sendResponse({message :"Invalid DocumentId"});
-            }
+            fetch(fetch_url,fetch_options).then((response) => response.json()).then((data) => sendResponse({message : data.title}));
+
+
+            // if(fetch_response.status === 200){
+            //     let doc = fetch_response.json();
+        
+            //     chrome.storage.local.set({'currentDocumentId' : currentDocumentId});
+            //     sendResponse({message : doc});
+            // } else{
+            //     sendResponse({message :"Invalid DocumentId"});
+            // }
             
         });
 
