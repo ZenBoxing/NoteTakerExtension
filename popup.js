@@ -14,7 +14,7 @@ function onButtonClick(){
 
  function messageReceivedCallBack(response){
       if(response.message === "success"){
-        document.getElementById("currentDocumentTitle").textContent = response.title;
+        document.getElementById("currentDocumentTitle").textContent = "Current Document: " + response.title;
       }else{
         alert(response.message);
       }
