@@ -1,7 +1,6 @@
 
 // sample id: 1vBLt4axCgXZ_aYqTfvYXTj-MroWI79fPWrR3uG1GARs
 
-
 document.getElementById("MainButton").addEventListener("click", onButtonClick);
 
 function onButtonClick(){

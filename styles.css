@@ -14,6 +14,7 @@
     padding: 6px;
     font-size: 14px;
     margin-top: 10px;
+    margin-left: 90px;
   }
 
   #MainButton:hover{
@@ -29,9 +30,11 @@
   }
 
   #inputForm{
-    margin-top: 75px;
+    margin-top: 10px;
+    text-align: left;
   }
 
   #currentDocumentTitle{
     font-size: 14px;
+    text-align: left;
   }
