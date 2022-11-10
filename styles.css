@@ -38,3 +38,14 @@
     font-size: 14px;
     text-align: left;
   }
+
+  #titleDisplay{
+    font-size:14px;
+    text-align: left;
+  }
+
+  #title{
+    display: inline;
+    font-size: 14px;
+    font-weight: bold;
+  }
