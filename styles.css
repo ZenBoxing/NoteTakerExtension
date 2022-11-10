@@ -2,7 +2,7 @@
     text-align: center;
     background-color: white;
     width: 300px;
-    height: 100px;
+    height: 120px;
   }
   
   #MainButton{
@@ -48,4 +48,13 @@
     display: inline;
     font-size: 14px;
     font-weight: bold;
+  }
+
+  #errorMessage{
+    font-size: 12px;
+    color: #cc0000;
+    font-weight: 600;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    text-align: center;
   }
