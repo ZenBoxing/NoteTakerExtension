@@ -22,7 +22,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
             fetch(fetch_url,fetch_options)
             .then((response) => response.json())
-            .then((data) => sendResponse({message : "success", title : data.title}))
+            .then((data) => fetchSuccessCallBack(data, sendResponse))
             .catch((error) => sendResponse({message: error}));
 
         });
@@ -30,6 +30,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         return true;
     }    
 });
+
+function fetchSuccessCallBack(data, sendResponse){
+    chrome.storage.local.set({currentDocumentId : data.documentId}); 
+    sendResponse({message : "success", title : data.title});
+}
+
 
 chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
