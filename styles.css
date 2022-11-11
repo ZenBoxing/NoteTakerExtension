@@ -1,8 +1,15 @@
-.App {
+body{
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.App{
     text-align: center;
     background-color: white;
     width: 300px;
     height: 120px;
+    border-color: #000000;
+    border-width: 10px;
   }
   
   #MainButton{
@@ -12,7 +19,6 @@
     border-width: 3px;
     border-radius: 5px;
     padding: 6px;
-    font-size: 14px;
     margin-top: 10px;
     margin-left: 90px;
   }
@@ -25,9 +31,6 @@
     background-color: #ffeb81;
   }
   
-  #documentIdLabel{
-    font-size: 14px;
-  }
 
   #inputForm{
     margin-top: 10px;
@@ -35,19 +38,16 @@
   }
 
   #currentDocumentTitle{
-    font-size: 14px;
     text-align: left;
   }
 
   #titleDisplay{
-    font-size:14px;
     text-align: left;
   }
 
   #title{
     display: inline;
-    font-size: 14px;
-    font-weight: bold;
+    font-weight: 700;
   }
 
   #errorMessage{
