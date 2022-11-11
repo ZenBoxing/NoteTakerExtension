@@ -32,8 +32,13 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 });
 
 function fetchSuccessCallBack(data, sendResponse){
-    chrome.storage.local.set({currentDocumentId : data.documentId}); 
-    sendResponse({message : "success", title : data.title});
+
+    if(data.title === undefined){
+        sendResponse({message : "unable to load", title: "undefined"});    
+    }else{
+        chrome.storage.local.set({currentDocumentId : data.documentId}); 
+        sendResponse({message : "success", title : data.title});    
+    }
 }
 
 

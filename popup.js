@@ -20,8 +20,11 @@ function onButtonClick(){
         chrome.storage.local.get(['documentTitle'], data => {
           document.getElementById("title").textContent = data.documentTitle;
         });
+
+        document.getElementById("errorMessage").style.visibility = "hidden";
+
       }else{
-        alert(response.message);
+        document.getElementById("errorMessage").style.visibility = "visible";
       }
  }
  
