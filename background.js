@@ -7,7 +7,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if(request.message === 'store_currentDocumentId'){
 
         let currentDocumentId = request.documentId;
-
+        
         chrome.identity.getAuthToken({ interactive: true }, function(token){
 
             let fetch_url =  `https://docs.googleapis.com/v1/documents/${currentDocumentId}`;

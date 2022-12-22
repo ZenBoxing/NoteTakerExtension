@@ -26,12 +26,9 @@
       ]
     }, 
     "permissions": [
-      "tabs",
-      "activeTab",
       "storage",
       "contextMenus",
-      "identity",
-      "identity.email"
+      "identity"
     ],
     "host_permissions":[
       "*://*/*"
