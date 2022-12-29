@@ -31,6 +31,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }    
 });
 
+
 function fetchSuccessCallBack(data, sendResponse){
 
     if(data.title === undefined){
