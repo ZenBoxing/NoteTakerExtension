@@ -17,7 +17,7 @@
         "16": "Note-Taker-Icon16.png"
       }
     ,
-    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApbVzlyT+o4EEYf0U0bL/etcwiTHe20qMWsevbJ+5bkSJZJlSlsaoD9cVW/tt0zIozZJCmF+IX+WSxwz1831BvtsZqXDZ+VzC7PdSNXk0UxoqczyJ7w2v7FsjqcjSEhyQuluYibBtVZ1IUeNudOtrruEMdaPudAYMiytKiZHY1nJn2nBoQ31n2ZRkZMajlyvROXKAcQJBa2MJmW7RTDykT4mGcnPCiNlwwWQcQcWRHCDzbZUAQ7y+4Z4uzmV32PcjSEh0ATO74xtgN6iw1N7jdmOjs+9IF7OlE16RLU8loOiog2mN0BKC9nKaEvmYFr7FQZ5VQQrNYj3PMBAzaAHIYQIDAQAB",
+    "key": "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCltXOXJP6jgQRh/RTRsv961zCJMd7bSoxax69sn7luRIlkmVKWxqgP1xVb+23TMijNkkKYX4hf5ZLHDPXzfUG+2xmpcNn5XMLs91I1eTRTGipzPInvDa/sWyOpyNISHJC6W5iJsG1VnUhR425062uu4Qx1o+50BgyLK0qJkdjWcmfacGhDfWfZlGRkxqOXK9E5coBxAkFrYwmZbtFMPKRPiYZyc8KI2XDBZBxBxZEcIPNtlQBDvL7hni7OZXfY9yNISHQBM7vjG2A3qLDU3uN2Y6Oz70gXs6UTXpEtTyWg6KiDaY3QEoL2cpoS+ZgWvsVBnlVBCs1iPc8wEDNoAchhAgMBAAECggEAAWHyQgQFsSHs4j+rJF0FyU3JdpKVQz+D7Ge7Pqj2Qk2VdyK5m/8SNMgg0i62zc7exOjUEAsHg3PSGcGxnWeJlHTl6dpSgkRwLquZWq99RJZ8vU+Hb9h9k9d2lKaDnLGy8jAclaUEg4Trfx3qfHSgplHTwZlFnn+UrBZXUc6nCFKCdewadALraWsQNrsdQAL6miu+KrJsb2dDPzn4GUxDINN0fGF4tEuw/D6dk4Omg8cL5dMBpyimdQ7eIcGG8vGrKUzl/MDU8udmHEz0w2if2h3jkMuGQHFodkiWoBVfzr7vIm8LwLuXzklf0txIPjAN43j1gkZfnbzRsgXp242lAQKBgQDnyqs0xplyyyXA0X4FWgkWonUAOzmzqUPoj2PCw4byqONbuqyqDEyv+xfJ+k6ml9UijE4BrySX7PyMncC0xGF1GAXBew3iP96TrYvGQS62sut0A5gjWI8PT/JOJZw3Xv+1C1+j0XnyobcczrO9IkZlm2dbAKk6pDR6cIw8JbqvgQKBgQC3A/LJ67rw1L39eNqqhx2zhsPCEwnFo5kaqmCURpZreOe9a0gQuXXi1aRVQvCnxy+sTm89AORKyjojWK9vFkkG8zl2cJRrL5ziN0ZKO/WTYluwYMwp4erXCqYJEoaI9b+w9pB7wb9u01iRBk7grMKK4j2oW+Huc4LSnODsejGI4QKBgFCq39qGI3En8gOg5NLH+tG9yCpEclhsWA3fmUB2+8gHrtiFpwGnNikooabRTf38aViUq7E6WunkuB/X5vECR0iRC6/CO5q5z6RliXd9x9wdeIPvnErwzxjtIc7AmBVNIoDHbIl+pYojba7A4Ry5iPZjlxy8piiabQkPkj58gvQBAoGBAI6pB0Ka/HfqfcbtxBYViPN+Y24PBRkIs7nzgaFTfMF917bxv5U53EjbnGPR8GH4hJLd+Rwma85Y4QTYhrgjOP2v7uUCUM9UqAg2ahZHsuAWVb6hVcR4FGVYKaD8zd5JIgnByVKO7rhnCqzRq/667FLylHl+VhlX9WxTWYk8nwxBAoGAcJdIepnuCyR3nEetOY+N6GBrccmPBaIPKQNUBVhD/ODJW118gUkDHdKzq6DHinS4eHbUg4Ogvz8f6WhYRJjQ6UuGnkARmxzDeXYZa9hcbk/KQdGv7ysqQnySx6uIaFuLEs49OVnCdoUIMN3llu7iNXPHmSpzA5YZE15glEIRAkE=",
     "oauth2": {
       "client_id": "930822050765-ui2uve3suebm5n2dc1ipp4j1ngj0n82i.apps.googleusercontent.com",
       "scopes":[
@@ -29,10 +29,7 @@
       "storage",
       "contextMenus",
       "identity"
-    ],
-    "host_permissions":[
-      "*://*/*"
     ]
-  
+    
   }
   
